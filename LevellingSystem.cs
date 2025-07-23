@@ -249,10 +249,7 @@ namespace Bonfire
 
 
         public float FocusCost(int totalInt) => (float)Math.Round(34.0 * Math.Exp(-0.01 * (totalInt + 1.0)));
-
-
-        public int CritChance(int totalLck) => (int)Math.Round(6.5 * Math.Log(totalLck));
-
+        
 
         public int DroppedGeo(int totalLck) => 1 + totalLck / 20;
 
@@ -312,14 +309,11 @@ namespace Bonfire
             {
                 BonfireMod.Instance.Status.ResilienceIncrease++;
             }
-            else if (stat == "Wisdom")
+            else (stat == "Wisdom")
             {
                 BonfireMod.Instance.Status.WisdomIncrease++;
             }
-            else
-            {
-                BonfireMod.Instance.Status.LuckIncrease++;
-            }
+
             if (BonfireMod.Instance.Status.RL3Levels <= 0)
             {
                 if (BonfireMod.Instance.Status.RL4Levels <= 0)
